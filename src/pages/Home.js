@@ -2,14 +2,20 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
-import Exclusives from "../components/Exclusives";
+import ExclusivesSection from "../components/sections/ExclusivesSection";
+import BestSellerSection from "../components/sections/BestSellerSection";
+import ScreenGlassesSection from "../components/sections/ScreenGlassesSection";
+import OtherBrandsSection from "../components/sections/OtherBrandsSection";
 
 const Home = () => {
   return (
     <div>
       <Navbar />
       <Hero />
-      <Exclusives />
+      <ExclusivesSection />
+      <BestSellerSection />
+      <ScreenGlassesSection />
+      <OtherBrandsSection />
       <Footer />
     </div>
   );
