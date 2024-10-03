@@ -6,6 +6,11 @@
   display: none;
 }
 
+/* active navbar */
+nav a.active {
+  font-weight: bold;
+}
+
 @keyframes gradientAnimation {
   0% {
     background: #f80759; /* Start with the first color */

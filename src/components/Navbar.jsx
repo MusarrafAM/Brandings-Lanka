@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -14,12 +14,20 @@ const Navbar = () => {
       <h1 className="w-full text-3xl font-bold text-[#00df9a]">
         Brandings Lanka
       </h1>
-      <ul className="hidden md:flex">
-        <Link className="p-4 cursor-pointer" to="/">Home</Link>
-        <Link className="p-4 cursor-pointer" to="/shop">Shop</Link>
-        <Link className="p-4 cursor-pointer" to="/about">About</Link>
-        <Link className="p-4 cursor-pointer" to="/contact">Contact</Link>
-      </ul>
+      <nav className="hidden md:flex">
+        <NavLink className="p-4 cursor-pointer" to="/">
+          Home
+        </NavLink>
+        <NavLink className="p-4 cursor-pointer" to="/shop">
+          Shop
+        </NavLink>
+        <NavLink className="p-4 cursor-pointer" to="/about">
+          About
+        </NavLink>
+        <NavLink className="p-4 cursor-pointer" to="/contact">
+          Contact
+        </NavLink>
+      </nav>
       <div onClick={handleNav} className="block md:hidden">
         {/* This size is react icon property */}
         {nav ? (

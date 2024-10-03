@@ -1,5 +1,6 @@
 import React from "react";
 import EachGlassCard from "../EachGlassCard";
+import products from "../../data/products.json";
 
 const ExclusivesSection = () => {
   return (
@@ -8,17 +9,13 @@ const ExclusivesSection = () => {
         Introducing Our Exclusive Premium Collections
       </h3>
       <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
-        <EachGlassCard />
-        <EachGlassCard />
-        <EachGlassCard />
-        <EachGlassCard />
-        <EachGlassCard />
-        <EachGlassCard />
-        <EachGlassCard />
-        <EachGlassCard />
-        <EachGlassCard />
-        <EachGlassCard />
-        <EachGlassCard />
+        {products.map((product) => (
+          <EachGlassCard
+            key={product.productName}
+            productName={product.productName}
+            price={product.price}
+          />
+        ))}
       </div>
     </div>
   );
