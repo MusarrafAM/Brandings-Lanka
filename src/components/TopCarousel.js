@@ -36,7 +36,7 @@ const TopCarousel = () => {
   return (
     <>
       {isVisible && (
-        <div className="bg-blue-500 px-2 lg:px-[10%] flex justify-between items-center relative">
+        <div className="top-Carousel px-2 lg:px-[10%] flex justify-between items-center relative">
           {/* Left Button (Previous) */}
           <button onClick={handlePrev}>
             <FaLessThan size={12} />

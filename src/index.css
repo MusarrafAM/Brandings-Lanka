@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+.whatsAppText {
+  display: none;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background: #f80759; /* Start with the first color */
+  }
+  50% {
+    background: #bc4e9c; /* Change to the second color */
+  }
+  100% {
+    background: #f80759; /* Return to the first color */
+  }
+}
+
+.top-Carousel {
+  background: #bc4e9c; /* Fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f80759,
+    #bc4e9c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f80759,
+    #bc4e9c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  animation: gradientAnimation 5s ease infinite; /* Adjust duration and timing function as needed */
+}
+
 /* .my-container {
 
 } */
