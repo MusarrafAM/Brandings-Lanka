@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -11,9 +11,12 @@ const Navbar = () => {
 
   return (
     <div className="bg-black flex justify-between items-center h-24 px-2 lg:px-[10%] text-white">
-      <h1 className="w-full text-3xl font-bold text-[#00df9a]">
-        Brandings Lanka
-      </h1>
+      <Link to={"/"}>
+        <h1 className="w-full text-3xl font-bold text-[#00df9a]">
+          Brandings Lanka
+        </h1>
+      </Link>
+
       <nav className="hidden md:flex">
         <NavLink className="p-4 cursor-pointer" to="/">
           Home

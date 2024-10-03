@@ -11,6 +11,15 @@ nav a.active {
   font-weight: bold;
 }
 
+.ItemDescription ul {
+  list-style-type: disc; /* Ensures bullets are shown */
+  padding-left: 20px; /* Adds padding for better indentation */
+}
+
+.ItemDescription li {
+  margin-bottom: 14px; /* Adds space between list items */
+}
+
 @keyframes gradientAnimation {
   0% {
     background: #f80759; /* Start with the first color */

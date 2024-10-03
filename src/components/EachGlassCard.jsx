@@ -7,6 +7,7 @@ const EachGlassCard = ({ url, productName, price }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
+    window.scrollTo(0, 0); // Scroll to top
     navigate(`/products/${productName}`, {
       state: {
         url: url || defaultUrl,
