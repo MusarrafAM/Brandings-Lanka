@@ -11,9 +11,11 @@ const EachProduct = () => {
   // Ensure price is a valid number, format with commas, and fallback to 0 if undefined
   const formattedPrice = Number(price)?.toLocaleString() || "0";
 
+  const totalPrice = price * count;
+  const formattedTotalPrice = Number(totalPrice)?.toLocaleString() || "0";
   const phoneNumber = "94720126063";
   const message = encodeURIComponent(
-    `Hello! I want to buy this. *${productName}* *Price:* RS ${formattedPrice} *Quantity:* ${count} Thank you!`
+    `Hello! I want to buy this. *${productName}* *Price:* RS ${formattedTotalPrice} *Quantity:* ${count} Thank you!`
   );
 
   // Increment and decrement functions
