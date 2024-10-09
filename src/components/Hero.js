@@ -8,7 +8,7 @@ const absoluteCenture =
 
 const Hero = () => {
   return (
-    <div className="bg-blue-100 flex items-center justify-center">
+    <div className="flex items-center justify-center">
       <div className="w-full h-screen relative">
         <Link to="/shop">
           <button

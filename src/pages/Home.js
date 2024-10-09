@@ -4,14 +4,29 @@ import ExclusivesSection from "../components/sections/ExclusivesSection";
 import BestSellerSection from "../components/sections/BestSellerSection";
 import ScreenGlassesSection from "../components/sections/ScreenGlassesSection";
 import OtherBrandsSection from "../components/sections/OtherBrandsSection";
+import PopularProduct from "../components/PopularProduct";
 
 const Home = () => {
+  const popular1 = {
+    url: "https://simpletfa.com/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-20-at-8.18.47-PM-2-300x300.jpeg",
+    productName: "The Classic Round Acetate Wayfarer",
+    price: 5900,
+  };
+
+  const popular2 = {
+    url: "https://simpletfa.com/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-20-at-8.30.24-PM-768x768.jpeg",
+    productName: "The Screen Glass",
+    price: 5500,
+  };
+
   return (
     <div>
       <Hero />
       <ExclusivesSection />
       <BestSellerSection />
+      <PopularProduct {...popular1} />
       <ScreenGlassesSection />
+      <PopularProduct {...popular2} />
       <OtherBrandsSection />
     </div>
   );
