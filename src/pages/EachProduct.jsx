@@ -6,10 +6,15 @@ import EachGlassCard from "../components/EachGlassCard";
 const EachProduct = () => {
   const location = useLocation();
   const { url, price, productName } = location.state || {};
-  const [count, setCount] = useState(0); // State for counter
+  const [count, setCount] = useState(1); // State for counter
 
   // Ensure price is a valid number, format with commas, and fallback to 0 if undefined
   const formattedPrice = Number(price)?.toLocaleString() || "0";
+
+  const phoneNumber = "94720126063";
+  const message = encodeURIComponent(
+    `Hello! I want to buy this. *${productName}* *Price:* RS ${formattedPrice} *Quantity:* ${count} Thank you!`
+  );
 
   // Increment and decrement functions
   const increment = () => {
@@ -49,6 +54,8 @@ const EachProduct = () => {
             count={count}
             onIncrement={increment}
             onDecrement={decrement}
+            phoneNumber={phoneNumber}
+            message={message}
           />
           <button className="w-full border-black border-[1px] 300 py-2 my-2 text-center hover:text-white hover:bg-black duration-300">
             Add to Cart
