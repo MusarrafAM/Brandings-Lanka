@@ -5,6 +5,7 @@ import BestSellerSection from "../components/sections/BestSellerSection";
 import ScreenGlassesSection from "../components/sections/ScreenGlassesSection";
 import OtherBrandsSection from "../components/sections/OtherBrandsSection";
 import PopularProduct from "../components/PopularProduct";
+import Collections from "../components/sections/Collections";
 
 const Home = () => {
   const popular1 = {
@@ -24,6 +25,7 @@ const Home = () => {
       <Hero />
       <ExclusivesSection />
       <BestSellerSection />
+      <Collections />
       <PopularProduct {...popular1} />
       <ScreenGlassesSection />
       <PopularProduct {...popular2} />

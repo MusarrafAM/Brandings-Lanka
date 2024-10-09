@@ -26,11 +26,11 @@ const PopularProduct = ({ url, price, productName }) => {
   return (
     <div className="px-2 lg:px-[10%] py-10 ">
       <div className="grid md:grid-cols-2">
-        <div className="h-[500px]">
+        <div className="h-full ">
           <img
             src={url}
             alt={productName}
-            className="h-full w-full object-contain"
+            className="h-full w-full object-fit"
           />
         </div>
         <div className="px-8 ">
