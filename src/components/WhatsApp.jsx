@@ -3,11 +3,14 @@ import { FaWhatsappSquare } from "react-icons/fa";
 const WhatsApp = () => {
   const whatsAppStyle = { color: "green", fontSize: "60px" };
   const phoneNumber = "94720126063";
+  const message = encodeURIComponent(
+    "Hello! I would like to know more about your services."
+  );
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex group">
       <a
-        href={`https://wa.me/${phoneNumber}`}
+        href={`https://wa.me/${phoneNumber}?text=${message}`}
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center"
