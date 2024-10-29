@@ -2,16 +2,16 @@ import { useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import Slider from "@mui/material/Slider";
 
-const Filter = ({ onFilter }) => {
+const Filter = ({ onFilter, onSearch }) => {
   const [searchText, setSearchText] = useState("");
   const [priceRange, setPriceRange] = useState([0, 10000]);
 
-  const onSearch = () => {
-    setSearchText("");
-  };
-
   const handlePriceChange = (event, newValue) => {
     setPriceRange(newValue);
+  };
+
+  const applySearch = () => {
+    onSearch(searchText);
   };
 
   const applyFilter = () => {
@@ -29,7 +29,7 @@ const Filter = ({ onFilter }) => {
           onChange={(e) => setSearchText(e.target.value)}
           value={searchText}
         />
-        <button onClick={onSearch} className="bg-red-500 p-2">
+        <button onClick={applySearch} className="bg-red-500 p-2">
           <IoSearch size={20} />
         </button>
       </div>
@@ -41,6 +41,13 @@ const Filter = ({ onFilter }) => {
         </h4>
 
         {/* Each Categories  need to dynamically map later*/}
+        <div className="flex items-center justify-between border-b border-gray-300 py-3 group cursor-pointer">
+          <p className="text-gray-600 group-hover:text-black duration-200">
+            Exclusive Premium Collections
+          </p>
+          <p className="text-xs text-gray-400">(22)</p>
+        </div>
+
         <div className="flex items-center justify-between border-b border-gray-300 py-3 group cursor-pointer">
           <p className="text-gray-600 group-hover:text-black duration-200">
             Mens collection

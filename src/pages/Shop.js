@@ -15,11 +15,18 @@ const Shop = () => {
     setFilteredProducts(filtered);
   };
 
+  const handleSearch = (searchText) => {
+    const filtered = products.filter((product) =>
+      product.productName.toLowerCase().includes(searchText.toLowerCase())
+    );
+    setFilteredProducts(filtered);
+  };
+
   return (
     <div className="px-2 lg:px-[10%] py-10">
       <div className="grid grid-cols-4">
         <div className="hidden md:block">
-          <Filter onFilter={handleFilter} />
+          <Filter onSearch={handleSearch} onFilter={handleFilter} />
         </div>
         <div className="col-span-4 md:col-span-3">
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
