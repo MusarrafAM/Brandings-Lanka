@@ -2,7 +2,7 @@ import { useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import Slider from "@mui/material/Slider";
 
-const Filter = () => {
+const Filter = ({ onFilter }) => {
   const [searchText, setSearchText] = useState("");
   const [priceRange, setPriceRange] = useState([0, 10000]);
 
@@ -14,8 +14,8 @@ const Filter = () => {
     setPriceRange(newValue);
   };
 
-  const getPriceRange = () => {
-    console.log(priceRange);
+  const applyFilter = () => {
+    onFilter(priceRange);
   };
 
   return (
@@ -83,7 +83,7 @@ const Filter = () => {
           </div>
         </div>
         <button
-          onClick={getPriceRange}
+          onClick={applyFilter}
           className="bg-blue-400 px-6 py-1 rounded-full mx-auto block"
         >
           {/* here block make the button take sthe full width so our mx-auto works as exected */}
