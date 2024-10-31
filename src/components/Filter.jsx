@@ -2,7 +2,7 @@ import { useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import Slider from "@mui/material/Slider";
 
-const Filter = ({ onFilter, onSearch }) => {
+const Filter = ({ onFilter, onSearch, onCategorySelect, categoryCounts }) => {
   const [searchText, setSearchText] = useState("");
   const [priceRange, setPriceRange] = useState([0, 10000]);
 
@@ -17,6 +17,13 @@ const Filter = ({ onFilter, onSearch }) => {
   const applyFilter = () => {
     onFilter(priceRange);
   };
+
+  const categories = [
+    "Exclusive Premium Collection",
+    "Mens Collection",
+    "Junior collection",
+    "Women’s collection",
+  ];
 
   return (
     <div className="px-6">
@@ -40,34 +47,21 @@ const Filter = ({ onFilter, onSearch }) => {
           Product categories
         </h4>
 
-        {/* Each Categories  need to dynamically map later*/}
-        <div className="flex items-center justify-between border-b border-gray-300 py-3 group cursor-pointer">
-          <p className="text-gray-600 group-hover:text-black duration-200">
-            Exclusive Premium Collections
-          </p>
-          <p className="text-xs text-gray-400">(22)</p>
-        </div>
-
-        <div className="flex items-center justify-between border-b border-gray-300 py-3 group cursor-pointer">
-          <p className="text-gray-600 group-hover:text-black duration-200">
-            Mens collection
-          </p>
-          <p className="text-xs text-gray-400">(102)</p>
-        </div>
-
-        <div className="flex items-center justify-between border-b border-gray-300 py-3 group cursor-pointer">
-          <p className="text-gray-600 group-hover:text-black duration-200">
-            Junior collection
-          </p>
-          <p className="text-xs text-gray-400">(56)</p>
-        </div>
-
-        <div className="flex items-center justify-between border-b border-gray-300 py-3 group cursor-pointer">
-          <p className="text-gray-600 group-hover:text-black duration-200">
-            Women’s collection.
-          </p>
-          <p className="text-xs text-gray-400">(74)</p>
-        </div>
+        {/* Dynamically map each category */}
+        {categories.map((category) => (
+          <div
+            key={category}
+            className="flex items-center justify-between border-b border-gray-300 py-3 group cursor-pointer"
+            onClick={() => onCategorySelect(category)}
+          >
+            <p className="text-gray-600 group-hover:text-black duration-200">
+              {category}
+            </p>
+            <p className="text-xs text-gray-400">
+              ({categoryCounts[category] || 0})
+            </p>
+          </div>
+        ))}
       </div>
 
       {/* Filter By Price */}

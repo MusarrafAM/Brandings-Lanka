@@ -22,11 +22,45 @@ const Shop = () => {
     setFilteredProducts(filtered);
   };
 
+  // Calculate counts for each category
+  const categoryCounts = products.reduce((acc, product) => {
+    product.categories.forEach((category) => {
+      acc[category] = (acc[category] || 0) + 1;
+    });
+    return acc;
+  }, {});
+
+  // below is the same Calculate counts for each category but easyly understandabel version.
+
+  // const categoryCounts = {};
+
+  // products.forEach((product) => {
+  //   product.categories.forEach((category) => {
+  //     if (categoryCounts[category]) {
+  //       categoryCounts[category] += 1;
+  //     } else {
+  //       categoryCounts[category] = 1;
+  //     }
+  //   });
+  // });
+
+  const handleCategoryFilter = (category) => {
+    const filtered = products.filter((product) =>
+      product.categories.includes(category)
+    );
+    setFilteredProducts(filtered);
+  };
+
   return (
     <div className="px-2 lg:px-[10%] py-10">
       <div className="grid grid-cols-4">
         <div className="hidden md:block">
-          <Filter onSearch={handleSearch} onFilter={handleFilter} />
+          <Filter
+            onSearch={handleSearch}
+            onFilter={handleFilter}
+            onCategorySelect={handleCategoryFilter}
+            categoryCounts={categoryCounts} // Pass counts as props
+          />
         </div>
         <div className="col-span-4 md:col-span-3">
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
