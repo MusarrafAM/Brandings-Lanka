@@ -85,11 +85,7 @@ const Shop = () => {
         <div className="col-span-4 md:col-span-3">
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
             {paginatedProducts.map((product, index) => (
-              <EachGlassCard
-                key={index}
-                productName={product.productName}
-                price={product.price}
-              />
+              <EachGlassCard key={index} {...product} />
             ))}
           </div>
 
