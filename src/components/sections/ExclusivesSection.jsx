@@ -9,9 +9,9 @@ const ExclusivesSection = () => {
         Introducing Our Exclusive Premium Collections
       </h3>
       <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
-        {products.map((product) => (
+        {products.map((product, index) => (
           <EachGlassCard
-            key={product.productName}
+            key={index}
             productName={product.productName}
             price={product.price}
           />

@@ -2,8 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const EachGlassCard = ({ url, productName, price }) => {
-  const defaultUrl =
-    "https://simpletfa.com/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-20-at-8.18.47-PM-2-300x300.jpeg";
+  const defaultUrl = [
+    "https://simpletfa.com/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-20-at-8.18.47-PM-2-300x300.jpeg",
+  ];
   const navigate = useNavigate();
 
   const handleClick = () => {
