@@ -6,8 +6,16 @@ import ScreenGlassesSection from "../components/sections/ScreenGlassesSection";
 import OtherBrandsSection from "../components/sections/OtherBrandsSection";
 import PopularProduct from "../components/PopularProduct";
 import Collections from "../components/sections/Collections";
+import Shop from "./Shop";
+import { useRef } from "react";
 
 const Home = () => {
+  const shopRef = useRef(null);
+
+  const scrollToShop = () => {
+    shopRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   const popular1 = {
     url: "https://simpletfa.com/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-20-at-8.18.47-PM-2-300x300.jpeg",
     productName: "The Classic Round Acetate Wayfarer",
@@ -22,7 +30,10 @@ const Home = () => {
 
   return (
     <div>
-      <Hero />
+      <Hero scrollToShop={scrollToShop} />
+      <div ref={shopRef}>
+        <Shop />
+      </div>
       <ExclusivesSection />
       <BestSellerSection />
       <Collections />

@@ -19,9 +19,9 @@ const Navbar = () => {
         <NavLink className="p-4 cursor-pointer" to="/">
           Home
         </NavLink>
-        <NavLink className="p-4 cursor-pointer" to="/shop">
+        {/* <NavLink className="p-4 cursor-pointer" to="/shop">
           Shop
-        </NavLink>
+        </NavLink> */}
         <NavLink className="p-4 cursor-pointer" to="/about">
           About
         </NavLink>

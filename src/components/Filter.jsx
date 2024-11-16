@@ -11,7 +11,8 @@ const Filter = ({ onFilter, onSearch, onCategorySelect, categoryCounts }) => {
     setPriceRange(newValue);
   };
 
-  const applySearch = () => {
+  const applySearch = (e) => {
+    e.preventDefault();
     onSearch(searchText);
   };
 
@@ -34,18 +35,18 @@ const Filter = ({ onFilter, onSearch, onCategorySelect, categoryCounts }) => {
   return (
     <div className="px-6">
       {/* Searchbar */}
-      <div className="flex items-center pt-2">
+      <form onSubmit={applySearch} className="flex items-center pt-2">
         <input
           type="text"
           placeholder="Search..."
-          className="border-2 border-black px-2 py-1"
+          className="border-2 border-black px-2 py-1 w-full"
           onChange={(e) => setSearchText(e.target.value)}
           value={searchText}
         />
-        <button onClick={applySearch} className="bg-red-500 p-2">
+        <button typeof="submit" className="bg-red-500 ml-[1px]  p-2">
           <IoSearch size={20} />
         </button>
-      </div>
+      </form>
 
       {/* Product Categories */}
       <div className="mt-4">
@@ -62,7 +63,9 @@ const Filter = ({ onFilter, onSearch, onCategorySelect, categoryCounts }) => {
           >
             <p
               className={`${
-                activeCategory === category ? "text-black font-semibold" : "text-gray-600"
+                activeCategory === category
+                  ? "text-black font-semibold"
+                  : "text-gray-600"
               } group-hover:text-black`}
             >
               {category}

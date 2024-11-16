@@ -72,7 +72,7 @@ const Shop = () => {
   };
 
   return (
-    <div className="px-2 lg:px-[10%] py-10">
+    <div className="px-2 lg:px-[10%] py-10 lg:h-screen">
       <div className="grid grid-cols-4">
         <div className="hidden md:block">
           <Filter
