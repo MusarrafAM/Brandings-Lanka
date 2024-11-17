@@ -2,6 +2,7 @@ import React, { useState } from "react"; // Import useState
 import { useLocation } from "react-router-dom";
 import Counter from "../components/Counter";
 import EachGlassCard from "../components/EachGlassCard";
+import HeroImage from "../components/HeroImage";
 
 const EachProduct = () => {
   const location = useLocation();
@@ -34,11 +35,7 @@ const EachProduct = () => {
     <div className="px-2 lg:px-[10%] py-10 ">
       <div className="grid md:grid-cols-2">
         <div className="h-[500px]">
-          <img
-            src={image}
-            alt={productName}
-            className="h-full w-full object-contain"
-          />
+          <HeroImage image={image}/>
           <div className="flex justify-evenly gap-4 px-10 pt-4">
             {images.map((eachImg, index) => {
               const isSelected = image === eachImg;
