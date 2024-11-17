@@ -12,7 +12,7 @@ function HeroImage({ image }) {
 
   return (
     <figure
-      className="relative mx-auto my-36 border-4 border-white shadow-lg h-[300px] w-[500px] overflow-hidden cursor-zoom-in bg-cover bg-no-repeat bg-center"
+      className="relative border-4 border-white shadow-lg overflow-hidden cursor-zoom-in bg-no-repeat h-full w-full"
       onMouseMove={handleZoom}
       style={{
         backgroundImage: `url(${image})`,
@@ -20,7 +20,7 @@ function HeroImage({ image }) {
       }}
     >
       <img
-        className="transition-opacity duration-500 block w-full hover:opacity-0"
+        className="transition-opacity duration-500 block  hover:opacity-0 h-full w-full object-fill"
         src={image}
         alt="Zoomable"
       />
