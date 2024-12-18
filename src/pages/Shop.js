@@ -3,10 +3,13 @@ import EachGlassCard from "../components/EachGlassCard";
 import Filter from "../components/Filter";
 import { useState } from "react";
 import Pagination from "@mui/material/Pagination";
+import FilterModal from "../components/FilterModal";
 
 const Shop = () => {
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const itemsPerPage = 10;
 
   // Filtering by price logic
@@ -35,7 +38,7 @@ const Shop = () => {
     return acc;
   }, {});
 
-  // below is the same Calculate counts for each category but easyly understandabel version.
+  // below is the same Calculate counts for each category but easily understandable version.
 
   // const categoryCounts = {};
 
@@ -72,9 +75,34 @@ const Shop = () => {
   };
 
   return (
-    <div className="px-2 lg:px-[10%] py-10 lg:h-screen">
-      <div className="grid grid-cols-4">
+    <div className="px-2 lg:px-[10%] py-10 lg:h-screen bg-gray-100">
+      {/* Filter ModalFor Mobile Device */}
+      {/* Filter Modal Button */}
+      <div className="md:hidden">
+        <div className="flex justify-center w-full">
+          <button
+            className="bg-gray-600 text-white px-4 py-2 rounded"
+            onClick={() => setIsModalOpen(true)}
+          >
+            Open Filter
+          </button>
+        </div>
+
+        {isModalOpen && (
+          <FilterModal
+            onSearch={handleSearch}
+            onFilter={handleFilter}
+            onCategorySelect={handleCategoryFilter}
+            categoryCounts={categoryCounts} // Pass counts as props
+            onClose={() => setIsModalOpen(false)} // Close the modal
+          />
+        )}
+      </div>
+
+      {/* All Filtered Items */}
+      <div className="grid grid-cols-4 mt-10">
         <div className="hidden md:block">
+          {/* Normal Filter */}
           <Filter
             onSearch={handleSearch}
             onFilter={handleFilter}
@@ -82,14 +110,11 @@ const Shop = () => {
             categoryCounts={categoryCounts} // Pass counts as props
           />
         </div>
+
         <div className="col-span-4 md:col-span-3">
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
             {paginatedProducts.map((product, index) => (
-              <EachGlassCard
-                key={index}
-                productName={product.productName}
-                price={product.price}
-              />
+              <EachGlassCard key={index} {...product} />
             ))}
           </div>
 

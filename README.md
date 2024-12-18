@@ -1,5 +1,8 @@
 # Development deployed link
+
 https://brandingslanka.netlify.app/
+
+Hosted Link = https://brandingslanka.netlify.app/
 
 # Getting Started with Create React App
 

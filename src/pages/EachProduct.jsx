@@ -2,11 +2,15 @@ import React, { useState } from "react"; // Import useState
 import { useLocation } from "react-router-dom";
 import Counter from "../components/Counter";
 import EachGlassCard from "../components/EachGlassCard";
+import HeroImage from "../components/HeroImage";
 
 const EachProduct = () => {
   const location = useLocation();
   const { url, price, productName } = location.state || {};
   const [count, setCount] = useState(1); // State for counter
+
+  const images = url;
+  const [image, setImage] = useState(images[0]);
 
   // Ensure price is a valid number, format with commas, and fallback to 0 if undefined
   const formattedPrice = Number(price)?.toLocaleString() || "0";
@@ -31,13 +35,25 @@ const EachProduct = () => {
     <div className="px-2 lg:px-[10%] py-10 ">
       <div className="grid md:grid-cols-2">
         <div className="h-[500px]">
-          <img
-            src={url}
-            alt={productName}
-            className="h-full w-full object-contain"
-          />
+          <HeroImage image={image} />
+          <div className="flex justify-evenly gap-4 px-10 pt-4">
+            {images.map((eachImg, index) => {
+              const isSelected = image === eachImg;
+              return (
+                <div
+                  key={index}
+                  className={`cursor-pointer max-w-[30%] flex items-center ${
+                    isSelected ? "border-2 border-black" : "border"
+                  }`}
+                  onClick={() => setImage(images[index])}
+                >
+                  <img src={eachImg} alt={productName} />
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <div className="px-8 ">
+        <div className="px-8 h-screen mt-28 md:mt-0">
           <h1 className="text-5xl">{productName}</h1>
           <p className="text-lg py-8">Rs {formattedPrice}.00 LKR</p>
           <div className="ItemDescription mb-8">
@@ -72,6 +88,7 @@ const EachProduct = () => {
       <div className="my-10">
         <h3 className="ml-2 text-2xl mb-6">Related Products</h3>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {/* url={url} price={price} productName={productName}  need to pass this later in eachGlassCard */}
           <EachGlassCard />
           <EachGlassCard />
           <EachGlassCard />
