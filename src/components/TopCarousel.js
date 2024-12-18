@@ -44,7 +44,7 @@ const TopCarousel = () => {
 
           {/* Display current text with animation */}
           <h1
-            className={`text-sm py-1 transition-all duration-300 ease-in-out transform ${
+            className={`text-xs  md:text-sm py-1 transition-all duration-300 ease-in-out transform ${
               isAnimating ? "opacity-0 " : "opacity-100"
             }`}
           >

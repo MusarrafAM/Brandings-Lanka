@@ -44,25 +44,23 @@ const Navbar = () => {
             : "fixed left-[-100%]"
         }
       >
-        <h1 className="w-full text-3xl font-bold text-[#00df9a] m-4">
+        <h1 className="w-full text-2xl font-bold text-[#00df9a] m-4">
           Brandings Lanka
         </h1>
         <ul className="uppercase p-4">
-          <li
-            className="p-4 border-b border-b-gray-600 cursor-pointer"
-            onClick={handleNav}
-          >
-            <Link to="/">Home</Link>
-          </li>
-          <li
-            className="p-4 border-b border-b-gray-600 cursor-pointer"
-            onClick={handleNav}
-          >
-            <Link to="/about">About</Link>
-          </li>
-          <li className="p-4 cursor-pointer" onClick={handleNav}>
-            <Link to="/contact">Contact</Link>
-          </li>
+          <Link to="/" onClick={handleNav}>
+            <li className="p-4 border-b border-b-gray-600 cursor-pointer">
+              Home
+            </li>
+          </Link>
+          <Link to="/about" onClick={handleNav}>
+            <li className="p-4 border-b border-b-gray-600 cursor-pointer">
+              About
+            </li>
+          </Link>
+          <Link to="/contact" onClick={handleNav}>
+            <li className="p-4 cursor-pointer">Contact</li>
+          </Link>
         </ul>
       </div>
     </div>
