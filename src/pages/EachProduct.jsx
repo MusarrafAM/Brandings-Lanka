@@ -35,7 +35,7 @@ const EachProduct = () => {
     <div className="px-2 lg:px-[10%] py-10 ">
       <div className="grid md:grid-cols-2">
         <div className="h-[500px]">
-          <HeroImage image={image}/>
+          <HeroImage image={image} />
           <div className="flex justify-evenly gap-4 px-10 pt-4">
             {images.map((eachImg, index) => {
               const isSelected = image === eachImg;
@@ -53,7 +53,7 @@ const EachProduct = () => {
             })}
           </div>
         </div>
-        <div className="px-8 h-screen">
+        <div className="px-8 h-screen mt-28 md:mt-0">
           <h1 className="text-5xl">{productName}</h1>
           <p className="text-lg py-8">Rs {formattedPrice}.00 LKR</p>
           <div className="ItemDescription mb-8">
