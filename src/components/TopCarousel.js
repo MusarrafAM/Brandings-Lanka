@@ -44,7 +44,7 @@ const TopCarousel = () => {
 
           {/* Display current text with animation */}
           <h1
-            className={`text-xs  md:text-sm py-1 transition-all duration-300 ease-in-out transform ${
+            className={`text-xs md:text-sm py-1 transition-all duration-300 ease-in-out transform ${
               isAnimating ? "opacity-0 " : "opacity-100"
             }`}
           >
@@ -58,7 +58,7 @@ const TopCarousel = () => {
 
           {/* Close Button */}
           <button
-            className="absolute right-10 p-1"
+            className="absolute right-6 md:right-10 p-1"
             onClick={() => setIsVisible(false)}
           >
             <IoCloseSharp size={20} />
