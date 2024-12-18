@@ -22,7 +22,7 @@ const Hero = ({ scrollToShop }) => {
         >
           Show Now
         </button>
-        <img src={HeroImage2} className="h-full w-full object-cover" alt="" />
+        <img src={HeroImage2} className="z-0 h-full w-full object-cover" alt="" />
       </div>
     </div>
   );

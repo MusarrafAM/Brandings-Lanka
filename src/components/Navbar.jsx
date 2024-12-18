@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <div className="bg-black flex justify-between items-center h-24 px-2 lg:px-[10%] text-white">
       <Link to={"/"}>
-        <img src={Logo} alt="" className="h-20"/>
+        <img src={Logo} alt="" className="h-20" />
       </Link>
 
       <nav className="hidden md:flex">
@@ -40,7 +40,7 @@ const Navbar = () => {
       <div
         className={
           nav
-            ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500"
+            ? "z-10 md:hidden fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500"
             : "fixed left-[-100%]"
         }
       >
@@ -52,22 +52,16 @@ const Navbar = () => {
             className="p-4 border-b border-b-gray-600 cursor-pointer"
             onClick={handleNav}
           >
-            Home
+            <Link to="/">Home</Link>
           </li>
           <li
             className="p-4 border-b border-b-gray-600 cursor-pointer"
             onClick={handleNav}
           >
-            Shop
-          </li>
-          <li
-            className="p-4 border-b border-b-gray-600 cursor-pointer"
-            onClick={handleNav}
-          >
-            About
+            <Link to="/about">About</Link>
           </li>
           <li className="p-4 cursor-pointer" onClick={handleNav}>
-            Contact
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
       </div>
