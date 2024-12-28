@@ -15,9 +15,9 @@ const Footer = () => {
           Brandings Lanka
         </h1>
         <p className="py-4">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odit
-          ullam iste repellat consequatur libero reiciendis, blanditiis
-          accusantium.
+          your trusted source for high-quality glasses. We take pride in
+          offering a wide range of stylish and durable eyewear designed to suit
+          every need. Discover the perfect pair with us today!
         </p>
         <div className="flex justify-between md:w-[75%] my-6">
           <FaFacebookSquare size={30} />
