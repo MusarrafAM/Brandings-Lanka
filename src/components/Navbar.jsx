@@ -22,9 +22,9 @@ const Navbar = () => {
         {/* <NavLink className="p-4 cursor-pointer" to="/shop">
           Shop
         </NavLink> */}
-        <NavLink className="p-4 cursor-pointer" to="/about">
+        {/* <NavLink className="p-4 cursor-pointer" to="/about">
           About
-        </NavLink>
+        </NavLink> */}
         <NavLink className="p-4 cursor-pointer" to="/contact">
           Contact
         </NavLink>
@@ -53,11 +53,11 @@ const Navbar = () => {
               Home
             </li>
           </Link>
-          <Link to="/about" onClick={handleNav}>
+          {/* <Link to="/about" onClick={handleNav}>
             <li className="p-4 border-b border-b-gray-600 cursor-pointer">
               About
             </li>
-          </Link>
+          </Link> */}
           <Link to="/contact" onClick={handleNav}>
             <li className="p-4 cursor-pointer">Contact</li>
           </Link>
