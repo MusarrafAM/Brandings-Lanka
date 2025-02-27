@@ -3,12 +3,14 @@ import { useLocation } from "react-router-dom";
 import Counter from "../components/Counter";
 import EachGlassCard from "../components/EachGlassCard";
 import HeroImage from "../components/HeroImage";
+import products from "../data/products.json";
 
 const EachProduct = () => {
   const location = useLocation();
   const { url, price, productName } = location.state || {};
   const [count, setCount] = useState(1); // State for counter
 
+  const relatedProducts = products.slice(0, 4);
   const images = url;
   const [image, setImage] = useState(images[0]);
 
@@ -89,10 +91,17 @@ const EachProduct = () => {
         <h3 className="ml-2 text-2xl mb-6">Related Products</h3>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {/* url={url} price={price} productName={productName}  need to pass this later in eachGlassCard */}
+          {/* <EachGlassCard />
           <EachGlassCard />
           <EachGlassCard />
-          <EachGlassCard />
-          <EachGlassCard />
+          <EachGlassCard /> */}
+          {relatedProducts.map((product, index) => (
+            <EachGlassCard
+              key={index}
+              productName={product.productName}
+              price={product.price}
+            />
+          ))}
         </div>
       </div>
     </div>

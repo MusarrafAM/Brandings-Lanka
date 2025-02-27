@@ -3,7 +3,7 @@ import Tooltip from "@mui/material/Tooltip";
 
 const SocialLinks = () => {
   return (
-    <div className="flex items-center justify-center gap-2">
+    <div className="flex items-center justify-center gap-2 mt-4">
       <Tooltip title="Facebook" arrow>
         <a href="https://www.facebook.com/Brandingslanka.lk/">
           <FaFacebook size={30} color="3A589D" />
