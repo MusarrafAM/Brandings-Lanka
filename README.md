@@ -1,7 +1,3 @@
-# Development deployed link
-
-https://brandingslanka.netlify.app/
-
 
 # Getting Started with Create React App
 
